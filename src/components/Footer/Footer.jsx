@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <>
@@ -8,6 +9,8 @@ const Footer = () => {
               <p>&copy; 2024 Your Company. All rights reserved.</p>
             </div>
             <div>
+             
+              <Link target="_blank" to="https://twitter.com/_devSid">
               <button
                 type="button"
                 className="text-white bg-[#1da1f2] hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 me-2 mb-2"
@@ -27,6 +30,8 @@ const Footer = () => {
                 </svg>
                 Follow on Twitter
               </button>
+              </Link>
+              <Link target="_blank" to='https://github.com/Siddhant-Kashyap'>
               <button
                 type="button"
                 className="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 me-2 mb-2"
@@ -46,6 +51,8 @@ const Footer = () => {
                 </svg>
                 Follow on Github
               </button>
+              </Link>
+              
             </div>
           </div>
         </footer>

@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import Profile from "../Profile/Profile";
 import ProjectList from "../ProjectList/ProjectList";
 import ToDoList from "../TicketCard/ToDoList";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell, faVideo, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBell, faVideo, faPlus } from '@fortawesome/free-solid-svg-icons'
 import typingMeme from "../../assets/typingmeme.gif";
 import ProjectModal from "../Modals/ProjectModal";
 import { jwtDecode } from "jwt-decode";
@@ -13,7 +13,10 @@ import {useRecoilValue} from 'recoil'
 import { taskListState } from "../../recoil/atoms";
 import { Link } from "react-router-dom";
 
+
+
 const Dashboard = () => {
+  const [run, setRun] = useState(false);
   const tasks = useRecoilValue(taskListState);
   const [taskUpdated,setTaskUpdated] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -22,9 +25,11 @@ const Dashboard = () => {
   const [doneTask,setDone]= useState([]);
   const [isModalOpen, setModalOpen] = useState(false);
   const [modalOpen, setIsModalOpen] = useState(false);
-  const [projectList, setProjectList] = useState({ title: "", id: "" });
+  const [projectList, setProjectList] = useState({ title: "D", id: "" });
   const [_name,setName] = useState("");
   const [taskList,setTaskList] = useState([]);
+  
+
   const toggleModal = () => {
     setModalOpen(!isModalOpen);
   };
@@ -111,6 +116,7 @@ const Dashboard = () => {
 
   return (
     <>
+    
       {windowWidth < 768 ? (
         <div>
           <div className="text-center bg-yellow-200 p-2">
@@ -128,6 +134,7 @@ const Dashboard = () => {
         </div>
       ) : (
         <div className="flex justify-center  bg-gray-900">
+       
           <div className="w-1/4  ">
             {/* Profile */}
             <div className="flex justify-center overflow-hidden ">

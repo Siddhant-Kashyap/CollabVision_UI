@@ -16,7 +16,10 @@ const VideoRoom = () => {
     setRemoteSocketId(id);
   }, []);
   const handelCallHangUp=()=>{
-    window.location.href = 'http://localhost:5173/videolobby'
+    const hostname = window.location.hostname;
+  const port = window.location.port;
+  const redirectTo = `http://${hostname}:${port}/videolobby`;
+  window.location.href = redirectTo;
   }
 
   const handleCallUser = useCallback(async () => {
